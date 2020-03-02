@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <style xmlns="http://www.w3.org/2000/svg">
+      .cls-1 {
+        fill: none;
+        stroke: #f7f7fd;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    
+      .cls-2{
+        fill: none;
+        stroke: #f7f7fd;
+        stroke-width: 1px;
+        stroke-dasharray: 2 2;
+        fill-rule: evenodd;
+      }
+    
+    </style>
+
+  </defs>
+  <path xmlns="http://www.w3.org/2000/svg" id="fline" data-name="fline" class="cls-1" d="M17,10.5 C9.5,16.5 9.5,-2.5 1.5,3 C9.5,-2.5 9.5,16.5 17,10.5 Z" transform="translate(3 5)"/>
+
+<path xmlns="http://www.w3.org/2000/svg" id="avline" data-name="avline" class="cls-2" d="M5,12h13Z"/>
+</svg>
