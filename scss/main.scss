@@ -105,6 +105,19 @@ body {
 			height: 40px;
 		}
 	}
+	&__window {
+		display: none;
+		width: 212px;
+		height: 212px;
+		position: absolute;
+		z-index: 1;
+		right: 70px;
+		background-color: #111114;
+		-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		border-radius: 30px;
+	}
 }
 
 .bartop {
@@ -118,7 +131,6 @@ body {
 			display: grid;
 			grid-template: repeat(3, 1fr) / 1fr;
 			align-items: center;
-			//justify-items: center;
 		}
 	}
 	&__text {
@@ -225,17 +237,47 @@ body {
 			font-weight: 700;
 			margin-top: -3px;
 		}
+		//TODO add &:hover:after like .disciplinesGrid__more:hover:after
 	}
 }
 
 .disciplinesGrid {
 	display: grid;
+	position: relative;
 	grid-template: 40px 40px / repeat(4, 42px);
 	align-items: center;
 	justify-items: center;
 	padding: 0 22px;
 	border-right: 1px solid #25252b;
 	border-left: 1px solid #25252b;
+	&__more {
+		position: relative;
+		&:hover {
+			padding-top: 5px;
+		}
+		&:hover + .bar__window {
+			display: grid;
+			grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+		}
+		&:after {
+			//TODO merge this with moreButton in wayGrid
+			content: '...';
+			font-size: 20px;
+			line-height: 3px;
+			font-weight: 700;
+			margin-top: -3px;
+		}
+		&:hover:after {
+			position: absolute;
+			margin-top: -5px;
+			content: '';
+			width: 10px;
+			height: 10px;
+			left: 0;
+			background-color: #25252b;
+			transition: all 0.3s ease;
+		}
+	}
 }
 
 .profit {
