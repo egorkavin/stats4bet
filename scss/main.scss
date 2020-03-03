@@ -87,24 +87,24 @@ body {
 		bottom: 25px;
 		right: 25px;
 	}
-	&:hover + .bonus {
-		top: 40px;
-	}
-	&__bonus {
-		box-shadow: inset 0px 20px 12px -22px rgba(0, 0, 0, 0.75);
-		display: block;
-		margin: 0 auto;
-		border-radius: 0;
-		border-bottom-left-radius: 30px;
-		border-bottom-right-radius: 30px;
-		width: 900px;
-		height: 30px;
-		line-height: 30px;
-		transition: all 0.5s ease;
-		&:hover {
-			height: 40px;
-		}
-	}
+	// &:hover + .bonus {
+	// 	top: 40px;
+	// }
+	// &__bonus {
+	// 	box-shadow: inset 0px 20px 12px -22px rgba(0, 0, 0, 0.75);
+	// 	display: block;
+	// 	margin: 0 auto;
+	// 	border-radius: 0;
+	// 	border-bottom-left-radius: 30px;
+	// 	border-bottom-right-radius: 30px;
+	// 	width: 900px;
+	// 	height: 30px;
+	// 	line-height: 30px;
+	// 	transition: all 0.5s ease;
+	// 	&:hover {
+	// 		height: 40px;
+	// 	}
+	// }
 	&__window {
 		display: none;
 		width: 212px;
@@ -180,26 +180,59 @@ body {
 	text-decoration: none;
 }
 
+#bonus {
+	display: none;
+}
+
 .bonus {
 	display: block;
-	width: 900px;
-	margin: 0;
-	// position: absolute;
-	// z-index: -1;
-	top: 30px;
-	left: 50%;
-	transform: translate(-50%);
 	transition: all 0.5s ease;
+	box-shadow: inset 0px 20px 12px -22px rgba(0, 0, 0, 0.75);
+	margin: 0 auto;
+	border-radius: 0;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	width: 900px;
+	height: 30px;
+	line-height: 30px;
+	&__open {
+		padding: 30px;
+		margin-top: 10px;
+		border-radius: 30px;
+		-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		transition: all 0.5s ease-in;
+	}
+	&__wrapper {
+		height: 230px;
+		flex-flow: column;
+		justify-content: space-between;
+	}
+	&__item {
+		padding-bottom: 25px;
+		border-bottom: 1px solid grey;
+	}
 	&__text {
+		line-height: normal;
+		overflow-wrap: break-word;
+	}
+	&__p {
+		margin-left: 20px;
+	}
+	&__btn {
 		position: absolute;
 		bottom: 0;
 		left: 50%;
 		transform: translate(-50%);
 		color: #41414a;
 		text-decoration: none;
+		&:hover .bonus {
+			height: 40px;
+		}
 	}
 	&:hover {
-		height: 150px;
+		height: 40px;
 	}
 }
 

@@ -143,7 +143,7 @@
                 <img src="img/icon_more.svg" alt="More icon" align="absmiddle">
             </a>
         </div>
-        <div class="bar bar__bonus">
+        <div class="bar bonus">
             <a href="#" class="bonus__text text">БОНУСЫ</a>
         </div>
 
@@ -216,15 +216,37 @@
                 <img src="img/icon_more.svg" alt="More icon" align="absmiddle">
             </a>
         </div>
-        <div class="bar bar__bonus">
-            <a href="#" class="bonus__text text">БОНУСЫ</a>
+        <div class="bar bonus" id="bonus_isOpen">
+            <div class="bonus__wrapper" id="bonus">
+                <div class="bonus__item">
+                    <h1 class="text text__h1">+10% для новичков!</h1>
+                    <p class="text bonus__text bonus__p">Каждый новый игрок, воспользовавшись промокодом FIRSTTIMER,
+                        может получить
+                        дополнительные 10% к своему первому депозиту! Каждый новый игрок, воспользовавшись промокодом
+                        FIRSTTIMER, может получить дополнительные 10% к своему первому депозиту. Каждый новый игрок,
+                        воспользовавшись промокодом FIRSTTIMER, может получить дополнительные 10% к своему первому
+                        депозиту...
+                    </p>
+                </div>
+                <div class="bonus__item">
+                    <h1 class="text text__h1 bonus__text">+10% для новичков!</h1>
+                    <p class="text bonus__text bonus__p">Каждый новый игрок, воспользовавшись промокодом FIRSTTIMER,
+                        может получить
+                        дополнительные 10% к своему первому депозиту! Каждый новый игрок, воспользовавшись промокодом
+                        FIRSTTIMER, может получить дополнительные 10% к своему первому депозиту. Каждый новый игрок,
+                        воспользовавшись промокодом FIRSTTIMER, может получить дополнительные 10% к своему первому
+                        депозиту...
+                    </p>
+                </div>
+            </div>
+            <a class="bonus__btn text" onclick="showBonus()">БОНУСЫ</a>
         </div>
     </section>
 
 
 
 
-
+    <!-- !filter -->
     <div class="hidden-svg" style="display: none;">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <filter id="white">
@@ -236,6 +258,25 @@
             </filter>
         </svg>
     </div>
+    <!-- !filter end -->
+
+    <!-- TODO think how to make to work hover in none stage -->
+    <script>
+        function showBonus() {
+            let getBonus = document.getElementById("bonus");
+            //getBonus.style.display = getBonus.style.display === "block" ? "none" : "block";
+            if (getBonus.style.display === "flex") {
+                document.getElementById("bonus_isOpen").style.height = "30px";
+                document.getElementById("bonus_isOpen").classList.toggle("bonus__open");
+                getBonus.style.display = "none";
+            } else {
+                document.getElementById("bonus_isOpen").style.height = "290px";
+                document.getElementById("bonus_isOpen").classList.toggle("bonus__open");
+                getBonus.style.display = "flex";
+            }
+
+        }
+    </script>
 </body>
 
 </html>
