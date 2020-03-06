@@ -7,6 +7,7 @@
     <title>Stats4Bet</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -59,9 +60,6 @@
                 </div>
             </header>
 
-            <!-- <section class="background">
-                <img src="img/background/lina.jpg" alt="Lina" class="background__lina">
-            </section> -->
             <main class="main">
                 <section class="container">
                     <div class="bartop bar">
@@ -105,7 +103,9 @@
                             <img src="img/game_icons/ow.png" srcset="img/game_icons/ow_2x.png 2x" alt="Game logo 5">
                             <img src="img/game_icons/sc.png" srcset="img/game_icons/sc_2x.png 2x" alt="Game logo 6">
                             <img src="img/game_icons/ball.png" srcset="img/game_icons/ball_2x.png 2x" alt="Game logo 7">
-                            <button href="#" class="disciplinesGrid__more wayGrid__moreButton">+9</button>
+                            <button href="#" class="disciplinesGrid__more wayGrid__moreButton wayGrid__moreButton">
+                                +9
+                            </button>
                             <div class="bar bar__window">
                                 <img src="img/game_icons/dota2.png" srcset="img/game_icons/dota2_2x.png 2x"
                                     alt="Game logo 1">
@@ -332,48 +332,242 @@
                         </div>
                         <button class="bar bonus bonus__btn text">БОНУСЫ</button>
                     </div>
+
+
+                    <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->
+                    <div class="overlay" id="myNav">
+                        <div class="detailedBar">
+                            <a href="#" class="detailedBar__closeButton text detailedBar__text">Закрыть</a>
+                            <div class="detailedBar__item">
+                                <div class="detailedBar__itemHalf">
+                                    <img src="img/services/1xbet.png" srcset="img/services/1xbet_2x.png 2x" alt="1XBET"
+                                        class="detailedBar__logo logo">
+                                </div>
+                                <div class="border border__vertical"></div>
+                                <div class="detailedBar__itemHalf detailedBar__profit text">
+                                    <h1 class="profit__title">
+                                        Ожидаемый доход:
+                                        <span class="profit__value">~5517.96 $</span>
+                                    </h1>
+                                    <!-- <p class="profit__info">
+                                    После ввода 10$, 10 побед на ставках с вероятностью победить 50% и вывода выиграша.
+                                </p> -->
+                                </div>
+                            </div>
+                            <div class="border border__horizontal"></div>
+                            <div class="detailedBar__item detailedBar__item_column">
+                                <h1 class="detailedBar__absoluteTitle text text__h1">Дисциплины:</h1>
+                                <div class="detailedBar__icons">
+                                    <img src="img/game_icons/dota2.png" srcset="img/game_icons/dota2_2x.png 2x"
+                                        alt="Game logo 1">
+                                    <img src="img/game_icons/lol.png" srcset="img/game_icons/lol_2x.png 2x"
+                                        alt="Game logo 2">
+                                    <img src="img/game_icons/csgo.png" srcset="img/game_icons/csgo_2x.png 2x"
+                                        alt="Game logo 3">
+                                    <img src="img/game_icons/hots.png" srcset="img/game_icons/hots_2x.png 2x"
+                                        alt="Game logo 4">
+                                    <img src="img/game_icons/ow.png" srcset="img/game_icons/ow_2x.png 2x"
+                                        alt="Game logo 5">
+                                    <img src="img/game_icons/sc.png" srcset="img/game_icons/sc_2x.png 2x"
+                                        alt="Game logo 6">
+                                    <img src="img/game_icons/ball.png" srcset="img/game_icons/ball_2x.png 2x"
+                                        alt="Game logo 7">
+                                </div>
+                                <p class="detailedBar__text text">
+                                    Спортивные и киберспортивные диспциплины, доступныe для ставок.
+                                </p>
+                            </div>
+                            <div class="border border__horizontal"></div>
+                            <div class="detailedBar__item detailedBar__item_column">
+                                <h1 class="detailedBar__absoluteTitle text text__h1">Виды ставок:</h1>
+                                <div class="detailedBar__betsTypes">
+                                    <div class="detailedBar__upperText text">
+                                        <img src="img/average.svg" class="text__icon">
+                                        <p>комиссия: ~3%</p>
+                                    </div>
+                                    <div class="detailedBar__lowerText text">
+                                        <p>ставки: ~10%</p>
+                                        <p>комиссия: ~3%</p>
+                                        <p>комиссия: ~3%</p>
+                                    </div>
+                                </div>
+                                <p class="detailedBar__text text">
+                                    Приблизительные комиссии (средняя, и отдельно для каждого доступного вида ставок).
+                                </p>
+                            </div>
+                            <div class="border border__horizontal"></div>
+                            <div class="detailedBar__item detailedBar__bottom">
+                                <h1 class="detailedBar__absoluteTitle detailedBar__absoluteTitle_bottom text text__h1">
+                                    Способы ввода/вывода:</h1>
+                                <div class="detailedBar__itemHalf detailedBar__grid text">
+                                    <div>
+                                        <img src="img/average.svg" class="text__icon">
+                                        комиссия
+                                        <img src="img/icon_input.svg" class="text__icon text__svg">
+                                        ввода:
+                                        <b>3%</b>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/default.png" alt="">
+                                        <p>Steam-предметы:</p>
+                                        <p><b>да</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/logo_payment/visa.png" alt="">
+                                        <p>Visa:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/logo_payment/mastercard.png" alt="">
+                                        <p>Mastercard:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/logo_payment/webmoney.png" alt="">
+                                        <p>WebMoney:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                </div>
+                                <div class="border border__vertical" style="width: 154px;"></div>
+                                <div class="detailedBar__itemHalf detailedBar__grid text">
+                                    <div>
+                                        <img src="img/average.svg" class="text__icon">
+                                        комиссия
+                                        <img src="img/icon_output.svg" class="text__icon text__svg">
+                                        вывода:
+                                        <b>3%</b>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid detailedBar__smallerGrid_disabled text">
+                                        <img src="img/default.png" alt="">
+                                        <p>Steam-предметы:</p>
+                                        <p><b>да</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/logo_payment/visa.png" alt="">
+                                        <p>Visa:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid  detailedBar__smallerGrid_disabled">
+                                        <img src="img/logo_payment/mastercard.png" alt="">
+                                        <p>Mastercard:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                    <div class="detailedBar__smallerGrid">
+                                        <img src="img/logo_payment/webmoney.png" alt="">
+                                        <p>WebMoney:</p>
+                                        <p><b>4%</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bonus">
+                            <div class="bonus__wrapper bonus_active">
+                                <h1 class="bonus_activeTitle text text__h1">Бонусы:</h1>
+                                <div class="border border__horizontal"></div>
+                                <div class="bonus__item bonus__text">
+                                    <h1 class="text text__h1">+10% для новичков!</h1>
+                                    <p class="text bonus__text bonus__p">Каждый новый игрок, воспользовавшись промокодом
+                                        FIRSTTIMER,
+                                        может получить
+                                        дополнительные 10% к своему первому депозиту! Каждый новый игрок,
+                                        воспользовавшись
+                                        промокодом
+                                        FIRSTTIMER, может получить дополнительные 10% к своему первому депозиту. Каждый
+                                        новый
+                                        игрок,
+                                        воспользовавшись промокодом FIRSTTIMER, может получить дополнительные 10% к
+                                        своему
+                                        первому
+                                        депозиту...
+                                    </p>
+                                </div>
+                                <div class="border border__horizontal"></div>
+                                <div class="bonus__item bonus__text">
+                                    <h1 class="text text__h1">+10% для новичков!</h1>
+                                    <p class="text bonus__text bonus__p">Каждый новый игрок, воспользовавшись промокодом
+                                        FIRSTTIMER,
+                                        может получить
+                                        дополнительные 10% к своему первому депозиту! Каждый новый игрок,
+                                        воспользовавшись
+                                        промокодом
+                                        FIRSTTIMER, может получить дополнительные 10% к своему первому депозиту. Каждый
+                                        новый
+                                        игрок,
+                                        воспользовавшись промокодом FIRSTTIMER, может получить дополнительные 10% к
+                                        своему
+                                        первому
+                                        депозиту...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
-        <footer class="footer">
+        <footer class=" footer">
             <img src="img/logo_main/logo_footer.png" srcset="img/logo_main/logo_footer_2x.png 2x" alt="Stats4Bet logo"
                 class="footer__logo">
             <div class="footer__text">
                 <p class="footer__p text">
-                    Катаtлог игр Hot-Game.info предоставляет максимальное количество игр и ведущих магазинов. Вы легко
-                    сможете найти игру, сравнить цены, выбрать интернет-магазин и купить игру по выгодной цене!
+                    Катаtлог игр Hot-Game.info предоставляет максимальное количество игр и ведущих
+                    магазинов. Вы легко
+                    сможете найти игру, сравнить цены, выбрать интернет-магазин и купить игру по
+                    выгодной цене!
                 </p>
-                <p class="footer__p footer__contacts text">Предложить сервис или сообщить об ошибке: add@stats4.bet</p>
+                <p class="footer__p footer__contacts text">Предложить сервис или сообщить об ошибке:
+                    add@stats4.bet</p>
             </div>
         </footer>
     </div>
     <!-- !filter -->
-    <div class="hidden-svg" style="display: none;">
+    <div class="hiddenSvg">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <filter id="white">
                 <!-- #ffffff in rgba -->
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values="0 0 0 0 1
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values="
+                            0 0 0 0 1
                             0 0 0 0 1
                             0 0 0 0 1
                             0 0 0 1 0" />
+            </filter>
+            <filter id="disabled">
+                <feColorMatrix type="matrix" values="0.25     0     0     0     0
+                      0     0.25     0     0     0
+                      0     0     0.29     0     0
+                      0     0     0     1     0 " />
             </filter>
         </svg>
     </div>
     <!-- !filter end -->
 
     <script>
-        let acc = document.getElementsByClassName("bonus__btn");
-        let i;
+        let popupButton = document.getElementsByClassName("bar__more");
+        for (let i = 0; i < popupButton.length; i++) {
+            popupButton[i].addEventListener("click", function () {
+                let popupButton = document.getElementsByClassName("overlay");
+                console.log(popupButton);
+                popupButton[i].style.height = "100%";
+            })
+        }
+        // function openNav() {
+        //     document.getElementById("myNav").style.height = "100%";
+        // }
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
+        // function closeNav() {
+        //     document.getElementById("myNav").style.height = "0";
+        // }
+
+        let bonuses = document.getElementsByClassName("bonus__btn");
+        for (let i = 0; i < bonuses.length; i++) {
+            bonuses[i].addEventListener("click", function () {
                 this.classList.toggle("bonus__btn__active");
-                var panel = this.previousElementSibling;
+                let panel = this.previousElementSibling;
                 if (panel.style.maxHeight) {
                     panel.style.margin = 0;
                     panel.style.maxHeight = null;
                 } else {
-                    console.log('2');
                     panel.style.margin = "10px auto 0 auto";
                     panel.style.height = "auto";
                     panel.style.maxHeight = panel.scrollHeight + "px";
@@ -381,17 +575,15 @@
             });
         }
 
-        // let bartopItems = document.getElementsByClassName("bartop__item");
-        // let bartopItemsWithArrow = this.classList.contains("bartop__arrow");
-        let arrows = document.getElementsByClassName("bartop__arrow");
-        console.log(arrows);
-        for (let j = 0; j < arrows.length; j++) {
-
-            arrows[j].addEventListener("click", function () {
-                // let active = document.getElementsByClassName("bartop__arrow_active");
-                // active.classList.toggle("bartop__arrow_active");
-                this.classList.toggle("bartop__arrow_active");
-                this.classList.toggle("bartop__arrow_hidden");
+        let moreButtons = document.getElementsByClassName("wayGrid__moreButton");
+        for (let i = 0; i < moreButtons.length; i++) {
+            moreButtons[i].addEventListener("click", function () {
+                this.classList.toggle("wayGrid__moreButton_active");
+                let hiddenWindow = this.nextElementSibling;
+                if (hiddenWindow.style.display != "grid")
+                    hiddenWindow.style.display = "grid";
+                else
+                    hiddenWindow.style.display = "none";
             })
         }
     </script>

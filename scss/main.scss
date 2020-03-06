@@ -29,7 +29,7 @@ body {
 	color: #f7f7fd;
 	&__h1 {
 		font-size: 18px;
-		font-weight: 700;
+		//font-weight: 700;
 	}
 	&__icon {
 		vertical-align: middle;
@@ -74,13 +74,6 @@ body {
 	}
 }
 
-// .background {
-// 	&__lina {
-// 		position: absolute;
-// 		z-index: -1;
-// 	}
-// }
-
 .main {
 	padding: 1px 0;
 	background-image: url(../img/background/lina.jpg);
@@ -121,6 +114,8 @@ body {
 	}
 	&__window {
 		display: none;
+		padding: 20px;
+		grid-template: repeat(4, 43px)/repeat(4, 43px);
 		width: 212px;
 		height: 212px;
 		position: absolute;
@@ -258,6 +253,16 @@ body {
 			}
 		}
 	}
+	&_active {
+		height: auto;
+		max-height: 400px;
+		margin-top: 130px;
+		border-radius: 30px;
+	}
+	&_activeTitle {
+		text-align: center;
+		padding: 15px 0;
+	}
 }
 
 .wayGrid {
@@ -276,23 +281,46 @@ body {
 	}
 	&__moreButton {
 		font-size: 10px;
-		box-sizing: border-box;
-		background-color: #25252b;
+		background-color: #111114;
 		color: #f7f7fd;
 		width: 35px;
 		height: 22px;
-		border: none;
-		border-radius: 10px;
+
 		display: flex;
 		flex-flow: column;
 		align-items: center;
 		padding-top: 3px;
+		transition: all 0.2 ease;
 		&:after {
 			content: '...';
 			font-size: 20px;
 			line-height: 3px;
 			font-weight: 700;
 			margin-top: -3px;
+		}
+		&:hover {
+			box-sizing: border-box;
+			background-color: #25252b;
+			border: none;
+			border-radius: 10px;
+		}
+		&_active {
+			box-sizing: border-box;
+			background-color: #25252b;
+			border: none;
+			border-radius: 10px;
+			position: relative;
+			padding-top: 5px;
+			&:after {
+				position: absolute;
+				margin-top: -5px;
+				content: '';
+				width: 10px;
+				height: 10px;
+				left: 0;
+				background-color: #25252b;
+				transition: all 0.3s ease;
+			}
 		}
 	}
 }
@@ -303,35 +331,22 @@ body {
 	grid-template: 40px 40px / repeat(4, 42px);
 	align-items: center;
 	justify-items: center;
-	&__more {
-		position: relative;
-		&:hover {
-			padding-top: 5px;
-		}
-		&:hover:after {
-			position: absolute;
-			margin-top: -5px;
-			content: '';
-			width: 10px;
-			height: 10px;
-			left: 0;
-			background-color: #25252b;
-			transition: all 0.3s ease;
-		}
-		&:hover + .bar__window {
-			padding: 20px;
-			display: grid;
-			grid-template: repeat(4, 43px) / repeat(4, 43px);
-		}
-	}
-}
-
-.profit {
-	&__value {
-		font-size: 22px;
-		font-weight: 700;
-		color: #059202;
-	}
+	// &__more {
+	// 	position: relative;
+	// 	&:hover {
+	// 		padding-top: 5px;
+	// 	}
+	// 	&:hover:after {
+	// 		position: absolute;
+	// 		margin-top: -5px;
+	// 		content: '';
+	// 		width: 10px;
+	// 		height: 10px;
+	// 		left: 0;
+	// 		background-color: #25252b;
+	// 		transition: all 0.3s ease;
+	// 	}
+	// }
 }
 
 .container__newbie {
@@ -359,6 +374,7 @@ body {
 		width: 68px;
 		height: 1px;
 		transform: rotate(90deg);
+		margin: auto 0;
 	}
 	background: rgba(17, 17, 20, 1);
 	background: -moz-linear-gradient(
@@ -408,8 +424,7 @@ body {
 }
 
 .footer {
-	flex: 0 0 auto;
-	// position: absolute;
+	//flex: 0 0 auto;
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -430,5 +445,148 @@ body {
 		margin-top: 20px;
 		margin-left: 125px;
 	}
-	//display: none;
+}
+//!POPUS
+.overlay {
+	height: 0;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.detailedBar {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #111114;
+	-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+	border-radius: 30px;
+	width: 1060px;
+	height: 734px;
+	display: flex;
+	flex-direction: column;
+	padding: 25px 50px 50px 50px;
+	transition: 0.5s;
+	//top: 20%;
+	//left: 50%;
+	//transform: translate(-50%, -20%);
+	&__item {
+		display: flex;
+		height: 120px;
+		width: 100%;
+		padding-bottom: 15px;
+		position: relative;
+		&_column {
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+	}
+	&__itemHalf {
+		width: 50%;
+		justify-content: center;
+	}
+	&__logo {
+		display: block;
+		margin: 0 auto;
+	}
+	&__profit {
+		display: flex;
+		//width: 50%;
+		position: relative;
+		// &:after {
+		// 	content: 'После ввода 10$, 10 побед на ставках с вероятностью победить 50% и вывода выиграша.';
+		// 	position: absolute;
+		// 	top: 90%;
+		// 	text-align: center;
+		// 	color: #41414a;
+		// }
+	}
+	&__icons {
+		display: flex;
+		justify-content: center;
+		& > img {
+			margin: 0 10px 0 10px;
+		}
+	}
+	&__p {
+		color: #41414a;
+	}
+	&__text {
+		color: #41414a;
+		text-align: center;
+		padding-top: 20px;
+	}
+	&__absoluteTitle {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		&_bottom {
+			top: -10%;
+		}
+	}
+	&__betsTypes {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__upperText {
+		display: flex;
+	}
+	&__lowerText {
+		display: flex;
+		margin-top: 20px;
+		& p {
+			margin: 0 25px;
+		}
+	}
+	&__grid {
+		display: grid;
+		grid-template: repeat(5, 40px) / 214px;
+		align-items: center;
+		justify-items: center;
+	}
+	&__smallerGrid {
+		display: grid;
+		grid-template: 40px / 40px 144px 30px;
+		align-items: center;
+		&_disabled {
+			filter: contrast(0) url(#disabled);
+		}
+	}
+	&__bottom {
+		height: auto;
+		margin-top: 100px;
+	}
+	&__closeButton {
+		position: absolute;
+		top: 0;
+		right: 25px;
+	}
+}
+
+.profit {
+	&__title {
+		font-size: 18px;
+		font-weight: 400;
+		color: #fff;
+		margin: auto 0;
+	}
+	&__value {
+		font-size: 22px;
+		font-weight: 700;
+		color: #059202;
+	}
+}
+
+.hiddenSvg {
+	display: none;
 }
