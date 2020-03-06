@@ -568,8 +568,10 @@ body {
 	}
 	&__closeButton {
 		position: absolute;
-		top: 0;
+		top: 25px;
 		right: 25px;
+		padding: 0;
+		z-index: 3;
 	}
 }
 

@@ -462,8 +462,10 @@ body {
     margin-top: 100px; }
   .detailedBar__closeButton {
     position: absolute;
-    top: 0;
-    right: 25px; }
+    top: 25px;
+    right: 25px;
+    padding: 0;
+    z-index: 3; }
 
 .profit__title {
   font-size: 18px;
