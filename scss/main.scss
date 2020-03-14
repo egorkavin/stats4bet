@@ -55,8 +55,6 @@ body {
 	&__wrapper {
 		padding: 30px 0 30px;
 		background-color: #202025;
-		-webkit-box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1), inset 0px -10px 10px -10px rgba(0, 0, 0, 1);
-		-moz-box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1), inset 0px -10px 10px -10px rgba(0, 0, 0, 1);
 		box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1), inset 0px -10px 10px -10px rgba(0, 0, 0, 1);
 	}
 	&__title {
@@ -84,8 +82,6 @@ body {
 
 .bar {
 	background-color: #111114;
-	-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 	color: #f7f7fd;
 	border-radius: 30px;
@@ -122,8 +118,6 @@ body {
 		z-index: 1;
 		right: 70px;
 		background-color: #111114;
-		-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 		box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 		border-radius: 30px;
 	}
@@ -173,16 +167,7 @@ body {
 		}
 		&_active {
 			filter: url(#white);
-			-webkit-animation: action 0.8s infinite alternate;
 			animation: action 0.8s infinite alternate;
-		}
-		@-webkit-keyframes action {
-			0% {
-				transform: translateY(0);
-			}
-			100% {
-				transform: translateY(-5px);
-			}
 		}
 		@keyframes action {
 			0% {
@@ -244,6 +229,7 @@ body {
 		transition: all 0.2s ease;
 		&:hover {
 			max-height: 40px;
+			padding-bottom: 10px;
 		}
 		&__active {
 			max-height: auto;
@@ -290,7 +276,7 @@ body {
 		flex-flow: column;
 		align-items: center;
 		padding-top: 3px;
-		transition: all 0.2 ease;
+		transition: all 0.2s ease;
 		&:after {
 			content: '...';
 			font-size: 20px;
@@ -366,7 +352,6 @@ body {
 
 .border {
 	&__horizontal {
-		//margin: 10px auto;
 		width: 772px;
 		height: 1px;
 	}
@@ -376,51 +361,8 @@ body {
 		transform: rotate(90deg);
 		margin: auto 0;
 	}
-	background: rgba(17, 17, 20, 1);
-	background: -moz-linear-gradient(
-		left,
-		rgba(17, 17, 20, 1) 0%,
-		rgba(65, 65, 74, 1) 50%,
-		rgba(65, 65, 74, 1) 51%,
-		rgba(17, 17, 20, 1) 100%
-	);
-	background: -webkit-gradient(
-		left top,
-		right top,
-		color-stop(0%, rgba(17, 17, 20, 1)),
-		color-stop(50%, rgba(65, 65, 74, 1)),
-		color-stop(51%, rgba(65, 65, 74, 1)),
-		color-stop(100%, rgba(17, 17, 20, 1))
-	);
-	background: -webkit-linear-gradient(
-		left,
-		rgba(17, 17, 20, 1) 0%,
-		rgba(65, 65, 74, 1) 50%,
-		rgba(65, 65, 74, 1) 51%,
-		rgba(17, 17, 20, 1) 100%
-	);
-	background: -o-linear-gradient(
-		left,
-		rgba(17, 17, 20, 1) 0%,
-		rgba(65, 65, 74, 1) 50%,
-		rgba(65, 65, 74, 1) 51%,
-		rgba(17, 17, 20, 1) 100%
-	);
-	background: -ms-linear-gradient(
-		left,
-		rgba(17, 17, 20, 1) 0%,
-		rgba(65, 65, 74, 1) 50%,
-		rgba(65, 65, 74, 1) 51%,
-		rgba(17, 17, 20, 1) 100%
-	);
-	background: linear-gradient(
-		to right,
-		rgba(17, 17, 20, 1) 0%,
-		rgba(65, 65, 74, 1) 50%,
-		rgba(65, 65, 74, 1) 51%,
-		rgba(17, 17, 20, 1) 100%
-	);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#111114', endColorstr='#111114', GradientType=1);
+	background: rgb(17, 17, 20);
+	background: linear-gradient(90deg, rgba(17, 17, 20, 1) 0%, rgba(65, 65, 74, 1) 50%, rgba(17, 17, 20, 1) 100%);
 }
 
 .footer {
@@ -431,8 +373,6 @@ body {
 	align-items: center;
 	padding: 45px 0;
 	background-color: #202025;
-	-webkit-box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1);
-	-moz-box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1);
 	box-shadow: inset 0px 10px 10px -10px rgba(0, 0, 0, 1);
 	&__text {
 		margin-left: 40px;
@@ -466,8 +406,6 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #111114;
-	-webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 	box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 	border-radius: 30px;
 	width: 1060px;
