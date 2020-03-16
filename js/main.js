@@ -26,7 +26,6 @@ for (let i = 0; i < bonuses.length; i++) {
 			panel.style.maxHeight = null;
 		} else {
 			panel.style.margin = '10px auto 0 auto';
-			panel.style.height = 'auto';
 			panel.style.maxHeight = panel.scrollHeight + 'px';
 		}
 	});
