@@ -7,7 +7,7 @@
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+          box-sizing: border-box; }
 
 :focus,
 :active {
@@ -28,8 +28,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 100%;
-  line-height: 1;
-  font-size: 14px; }
+  line-height: 1; }
 
 input,
 button,
@@ -580,7 +579,7 @@ body {
 .profit__title {
   font-size: 18px;
   font-weight: 400;
-  color: #fff;
+  color: white;
   margin: auto 0; }
 
 .profit__value {
