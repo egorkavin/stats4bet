@@ -1,0 +1,22 @@
+@mixin border($direction: 0deg) {
+	content: "";
+	position: absolute;
+	height: 68px;
+	min-width: 1px;
+	max-width: 1px;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgb(17, 17, 20);
+	background: linear-gradient($direction, rgba(17, 17, 20, 1) 0%, rgba(65, 65, 74, 1) 50%, rgba(17, 17, 20, 1) 100%);
+}
+
+@mixin flexAndCenterItem($direction) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}

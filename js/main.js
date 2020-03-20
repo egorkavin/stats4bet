@@ -31,10 +31,10 @@ for (let i = 0; i < bonuses.length; i++) {
 	});
 }
 
-let moreButtons = document.getElementsByClassName('wayGrid__moreButton');
+let moreButtons = document.getElementsByClassName('bar__moreIcons');
 for (let i = 0; i < moreButtons.length; i++) {
 	moreButtons[i].addEventListener('click', function() {
-		this.classList.toggle('wayGrid__moreButton_active');
+		this.classList.toggle('bar__moreIcons_active');
 		let hiddenWindow = this.nextElementSibling;
 		if (hiddenWindow.style.display != 'grid') hiddenWindow.style.display = 'grid';
 		else hiddenWindow.style.display = 'none';
