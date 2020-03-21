@@ -23,9 +23,12 @@ for (let i = 0; i < bonuses.length; i++) {
 		let panel = this.previousElementSibling;
 		if (panel.style.maxHeight) {
 			panel.style.margin = 0;
+			//panel.style.padding = 0;
 			panel.style.maxHeight = null;
 		} else {
 			panel.style.margin = '10px auto 0 auto';
+			//panel.style.paddingLeft = '30px';
+			//panel.style.paddingRight = '30px';
 			panel.style.maxHeight = panel.scrollHeight + 'px';
 		}
 	});

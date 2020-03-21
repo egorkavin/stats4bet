@@ -4,12 +4,12 @@
 
 body {
 	background-color: $body-bg;
-	//position: relative;
 }
 
 .container {
 	max-width: 1060px;
 	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 }
 
@@ -18,20 +18,26 @@ body {
 	font-size: 12px;
 	font-weight: 400;
 	color: $white-text;
-	&__h1 {
-		font-size: 18px;
+	&_grey {
+		color: $grey-text;
 		font-weight: 700;
-	}
-	&__icon {
-		vertical-align: middle;
 	}
 	&_center {
 		text-align: center;
+	}
+	&__h1 {
+		font-size: 18px;
+	}
+	&__icon {
+		vertical-align: middle;
 	}
 	&__profit {
 		font-size: 22px;
 		font-weight: 700;
 		color: $green-text;
+	}
+	&__detailedBar {
+		padding-top: 15px;
 	}
 	&__svg {
 		height: auto;
@@ -39,25 +45,28 @@ body {
 	}
 }
 
-// .profit {
-// 	&__title {
-// 		font-size: 18px;
-// 		font-weight: 400;
-// 		color: white;
-// 		margin: auto 0;
-// 	}
-// 	&__value {
-// 		font-size: 22px;
-// 		font-weight: 700;
-// 		color: $green-text;
-// 	}
-// }
-
 .logo {
 	display: block;
+	&_center {
+		margin: 0 auto;
+	}
 	&__header {
 		height: 115px;
 	}
+	&__bonus {
+		margin-left: 5px;
+		transition: transform 0.2s ease-in-out;
+	}
+}
+
+.button {
+	background-color: $bar-color;
+	text-decoration: none;
+	padding: 0;
+}
+
+.hiddenSvg {
+	display: none;
 }
 
 .header {
@@ -88,7 +97,7 @@ body {
 		margin-left: 30px;
 	}
 	&__intro {
-		width: 980px;
+		max-width: 980px;
 		margin-left: 50px;
 		margin-right: 30px;
 	}
@@ -107,16 +116,13 @@ body {
 }
 
 .bar {
+	display: flex;
+	width: 100%;
+	height: 164px;
 	background-color: $bar-color;
 	box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 	color: $white-text;
 	border-radius: 30px;
-	width: 100%;
-	height: 164px;
-	display: grid;
-	grid-template: 1fr / repeat(5, 1fr);
-	align-items: center;
-	justify-items: center;
 	position: relative;
 	&:nth-child(2) {
 		//TODO fix this
@@ -195,6 +201,8 @@ body {
 	&__window {
 		display: none;
 		padding: 20px;
+		justify-items: center;
+		align-items: center;
 		grid-template: repeat(4, 43px)/repeat(4, 43px);
 		width: 212px;
 		height: 212px;
@@ -214,12 +222,6 @@ body {
 }
 
 .bartop {
-	padding: 0;
-	display: grid;
-	grid-template: 1fr / repeat(5, 1fr);
-	align-items: center;
-	justify-items: center;
-
 	height: 100px;
 	&__item {
 		position: relative;
@@ -264,15 +266,10 @@ body {
 	}
 }
 
-.button__more {
-	color: $grey-text;
-	text-decoration: none;
-}
-
 .bonus {
 	display: block;
 	margin: 0 auto !important;
-	width: 900px;
+	max-width: 900px;
 	line-height: 30px;
 	border-radius: 0;
 	border-bottom-left-radius: 30px;
@@ -284,14 +281,31 @@ body {
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
 		max-height: 0;
-		width: 900px;
 		overflow: hidden;
-		transition: all 0.3s linear;
+		transition: all 0.2s linear;
+		&_active {
+			max-height: none;
+			height: auto;
+			margin-bottom: 150px;
+			border-radius: 30px;
+		}
 	}
 	&__item {
-		padding-top: 30px;
-		padding-left: 30px;
-		padding-bottom: 25px;
+		padding: 30px;
+		position: relative;
+		&:nth-child(1):after {
+			@include borderBottom();
+		}
+		&:nth-child(2):after {
+			@include borderBottom();
+		}
+	}
+	&__title {
+		padding: 10px;
+		position: relative;
+		&::after {
+			@include borderBottom();
+		}
 	}
 	&__text {
 		line-height: normal;
@@ -301,10 +315,9 @@ body {
 		margin-top: 25px;
 		margin-left: 20px;
 	}
-	&__separator {
-		display: block;
-	}
 	&__btn {
+		display: flex;
+		justify-content: center;
 		position: absolute;
 		text-align: center;
 		cursor: pointer;
@@ -315,14 +328,19 @@ body {
 		&:hover {
 			padding-top: 10px;
 			max-height: 40px;
+			& .logo__bonus {
+				transform: rotate(180deg);
+			}
 		}
 		&__active {
-			height: auto;
 			box-shadow: none;
-			transition: all 0.2s ease;
+			max-height: 40px;
+			padding-top: 10PX;
 			&:hover {
-				padding-top: 0;
-				max-height: 30px;
+				max-height: 40px;
+			}
+			& .logo__bonus {
+				transform: rotate(180deg);
 			}
 		}
 	}
@@ -333,29 +351,9 @@ body {
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	&_activeTitle {
-		text-align: center;
-		padding: 15px 0;
-	}
 }
 
-// .container__newbie {
-// 	display: block;
-// 	box-sizing: border-box;
-// 	width: 300px;
-// 	height: 140px;
-// 	margin: 25px 140px 0;
-// 	padding: 30px;
-// }
-
-// .container__more {
-// 	position: absolute;
-// 	bottom: 25px;
-// 	right: 25px;
-// }
-
 .footer {
-	//flex: 0 0 auto;
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -383,59 +381,57 @@ body {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: rgb(0, 0, 0);
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(37, 37, 43, 0.8);
 	overflow-x: hidden;
-	transition: 0.5s;
 }
 
 .detailedBar {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: $bar-color;
-	box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-	border-radius: 30px;
-	width: 1060px;
-	height: 734px;
-	display: flex;
 	flex-direction: column;
-	padding: 25px 50px 50px 50px;
-	transition: 0.5s;
-	//top: 20%;
-	//left: 50%;
-	//transform: translate(-50%, -20%);
+	height: 734px;
+	padding: 50px;
+	background-color: $bar-color;
+	margin-top: 150px;
+	margin-bottom: 30px;
 	&__item {
 		display: flex;
+		flex-wrap: wrap;
 		height: 120px;
-		width: 100%;
 		padding-bottom: 15px;
 		position: relative;
 		&_column {
 			flex-direction: column;
 			justify-content: flex-end;
 		}
+		&:not(:last-child):after {
+			@include borderBottom();
+		}
 	}
 	&__itemHalf {
+		display: flex;
 		width: 50%;
+		height: 68px;
 		justify-content: center;
-	}
-	&__logo {
-		display: block;
-		margin: 0 auto;
+		align-items: center;
+		position: relative;
+		&:nth-child(1)::after {
+			@include border();
+		}
 	}
 	&__profit {
 		display: flex;
-		//width: 50%;
-		position: relative;
-		// &:after {
-		// 	content: 'После ввода 10$, 10 побед на ставках с вероятностью победить 50% и вывода выиграша.';
-		// 	position: absolute;
-		// 	top: 90%;
-		// 	text-align: center;
-		// 	color: $grey-text;
-		// }
+		align-items: center;
+		& > h1 {
+			margin-right: 10px;
+		}
+		&::after {
+			@include numberAfter('13', #f2ac06);
+		}
+	}
+	&__info {
+		&_left {
+			width: 45%;
+			margin-left: auto;
+		}
 	}
 	&__icons {
 		display: flex;
@@ -461,47 +457,117 @@ body {
 		}
 	}
 	&__betsTypes {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	&__upperText {
-		display: flex;
-	}
-	&__lowerText {
-		display: flex;
-		margin-top: 20px;
-		& p {
-			margin: 0 25px;
+		margin: 0 auto;
+		width: 515px;
+		&_upper {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+			&::after {
+				@include numberAfter('25', #d10b1d);
+			}
+		}
+		&_lower {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
-	&__grid {
-		display: grid;
-		grid-template: repeat(5, 40px) / 214px;
-		align-items: center;
-		justify-items: center;
+	&__betsPercent {
+		display: flex;
+		&::after {
+			@include numberAfter('5', $green-text);
+		}
 	}
-	&__smallerGrid {
-		display: grid;
-		grid-template: 40px / 40px 144px 30px;
-		align-items: center;
-		&_disabled {
-			filter: contrast(0) url(#disabled);
+	&__expressBetsPercent {
+		display: flex;
+		&::after {
+			@include numberAfter('25', #d10b1d);
+		}
+	}
+	&__liveBetsPercent {
+		display: flex;
+		&::after {
+			@include numberAfter('25', #d10b1d);
 		}
 	}
 	&__bottom {
 		height: auto;
 		margin-top: 100px;
 	}
+	&__grid {
+		display: grid;
+		grid-template-rows: repeat(5, 40px);
+		grid-column: auto;
+		align-items: center;
+		justify-items: center;
+		height: auto;
+		&:nth-of-type(1)::after {
+			@include border(154px);
+		}
+	}
+	&__gridField {
+		display: grid;
+		grid-template-rows: 40px;
+		grid-template-columns: 40px 144px auto auto;
+		align-items: center;
+		justify-self: start;
+		&_disabled {
+			filter: contrast(0) url(#disabled);
+		}
+	}
+	&__input {
+		display: flex;
+		align-items: center;
+		&::after {
+			@include numberAfter('1', $green-text);
+		}
+	}
+	&__output {
+		display: flex;
+		align-items: center;
+		&::after {
+			@include numberAfter('1', $green-text);
+		}
+	}
+	&__visa {
+		&_in {
+			&::after {
+				@include numberAfter('1', $green-text);
+			}
+		}
+		&_out {
+			&::after {
+				@include numberAfter('1', $green-text);
+			}
+		}
+	}
+	&__mastercard {
+		&_in {
+			&::after {
+				@include numberAfter('1', $green-text);
+			}
+		}
+	}
+	&__webmoney {
+		&_in {
+			&::after {
+				@include numberAfter('1', $green-text);
+			}
+		}
+		&_out {
+			&::after {
+				@include numberAfter('1', $green-text);
+			}
+		}
+	}
 	&__closeButton {
 		position: absolute;
 		top: 25px;
 		right: 25px;
-		padding: 0;
 		z-index: 3;
 	}
-}
-
-.hiddenSvg {
-	display: none;
 }

@@ -1,14 +1,25 @@
-@mixin border($direction: 0deg) {
+@mixin border($height:68px) {
 	content: "";
 	position: absolute;
-	height: 68px;
-	min-width: 1px;
-	max-width: 1px;
+	height: $height;
+	width: 1px;
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
 	background: rgb(17, 17, 20);
-	background: linear-gradient($direction, rgba(17, 17, 20, 1) 0%, rgba(65, 65, 74, 1) 50%, rgba(17, 17, 20, 1) 100%);
+	background: linear-gradient(0deg, rgba(17, 17, 20, 1) 0%, rgba(65, 65, 74, 1) 50%, rgba(17, 17, 20, 1) 100%);
+}
+
+@mixin borderBottom() {
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 772px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgb(17, 17, 20);
+	background: linear-gradient(90deg, rgba(17, 17, 20, 1) 0%, rgba(65, 65, 74, 1) 50%, rgba(17, 17, 20, 1) 100%);
 }
 
 @mixin flexAndCenterItem($direction) {
@@ -17,6 +28,21 @@
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	width: 100%;
+	width: 25%;
 	text-align: center;
+}
+
+@mixin numberAfter($number, $color) {
+	content: $number;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	text-align: center;
+	color: $bar-color;
+	min-width: 20px;
+	height: 12px;
+	padding: 1px 6px 0 6px;
+	margin-left: 10px;
+	border-radius: 6px;
+	background-color: $color;
 }
