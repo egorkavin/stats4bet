@@ -78,10 +78,14 @@
                     <h1 class="bartop__text text">Способы ввода/вывода</h1>
                     <p class="bartop__text_bottom text">средняя комиссия (ввод/вывод)</p>
                 </div>
-                <div class="bartop__item">
+                <div class="bartop__item bartop__item_active">
                     <img src="img/logo_arrows.svg" alt="Arrow" class="bartop__arrow bartop__arrow_active">
                     <h1 class="bartop__text bar__text_active text">Ожидаемый доход</h1>
                     <p class="bartop__text_bottom text">ввод 10$, 10 побед и вывод</p>
+                </div>
+                <div class="bartop__text_mobile">
+                    <p class="text text_grey">Выбрать другой способ сортировки</p>
+                    <img src="img/chooseSort.svg" alt="Arrows" class="logo logo__choose">
                 </div>
             </div>
 
@@ -102,10 +106,18 @@
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">виды ставок:</p>
                     <div class="bar__bets">
-                        <div class="text text_center">
-                            <img src="img/average.svg" class="text__icon">
-                            комиссия: <b>3%</b>
+                        <div class="bar__mobileIcons">
+                            <img src="img/bets_types/bets.svg" alt="Bets icon">
+                            <img src="img/bets_types/expressBets.svg" alt="Bets icon">
+                            <img src="img/bets_types/liveBets.svg" alt="Bets icon">
+                        </div>
+                        <div class="bar__textWithIcons">
+                            <p class="text text_center">
+                                <img src="img/average.svg" class="text__icon">
+                                комиссия: <b>3%</b>
+                            </p>
                         </div>
                         <div class="bar__iconsGrid bar__iconsGrid_4">
                             <img src="img/default.png" alt="Bet-way logo 1">
@@ -117,29 +129,36 @@
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">способы ввода/вывода:</p>
                     <div class="bar__bets">
-                        <div class="text text_center">
-                            <img src="img/average.svg" class="text__icon">
-                            комиссия:
-                            <img src="img/icon_input.svg" class="text__icon text__svg">
-                            <b>3%</b>
-                            <img src="img/icon_output.svg" class="text__icon text__svg">
-                            <b>3%</b>
+                        <div class="bar__textWithIcons">
+                            <p class="text text_center">
+                                <img src="img/average.svg" class="text__icon">
+                                комиссия:
+                                <img src="img/icon_input.svg" class="text__icon text__svg">
+                                <b>3%</b>
+                                <img src="img/icon_output.svg" class="text__icon text__svg">
+                                <b>3%</b>
+                            </p>
                         </div>
                         <div class="bar__iconsGrid bar__iconsGrid_4">
-                            <img src="img/logo_payment/mastercard.png" alt="Dep-way logo 1">
-                            <img src="img/logo_payment/visa.png" alt="Dep-way logo 2">
-                            <img src="img/logo_payment/webmoney.png" alt="Dep-way logo 3">
+                            <img src="img/logo_payment/mastercard.png" srcset="img/logo_payment/mastercard_2x.png 2x"
+                                alt="Dep-way logo 1">
+                            <img src="img/logo_payment/visa.png" srcset="img/logo_payment/visa_2x.png 2x"
+                                alt="Dep-way logo 2">
+                            <img src="img/logo_payment/webmoney.png" srcset="img/logo_payment/webmoney_2x.png 2x"
+                                alt="Dep-way logo 3">
                             <button href="#" class="bar__moreIcons text">14</button>
                             <div class="bar bar__window"></div>
                         </div>
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">ожидаемый доход:</p>
                     <strong class="text__profit text">~5517.96 $</strong>
                 </div>
-                <button href="#" class="bar__more button text text_grey">
-                    Подробнее
+                <button href="#" class="bar__more button">
+                    <p class="text text_grey">Подробнее</p>
                     <img src="img/icon_more.svg" alt="More icon" align="absmiddle">
                 </button>
             </div>
@@ -177,144 +196,203 @@
                         </p>
                     </div>
                 </div>
-                <div class="bar bonus bonus__btn">
+                <div class="bonus__btn">
                     <p class="text text_grey">БОНУСЫ</p>
                     <div class="logo__bonus">
                         <img src="img/logo_arrows.svg" alt="Arrow">
                     </div>
                 </div>
-
             </div>
 
             <div class="overlay">
                 <div class="container">
                     <div class="bar detailedBar">
-                        <button class="detailedBar__closeButton button text text_grey">Закрыть</button>
+                        <button class="detailedBar__closeButton buttonWithIcon">
+                            <p class="text text_grey">Закрыть</p>
+                            <img src="img/icon_close.svg" alt="Close">
+                        </button>
                         <div class="detailedBar__item">
                             <div class="detailedBar__itemHalf">
-                                <img src="img/services/1xbet.png" srcset="img/services/1xbet_2x.png 2x" alt="1XBET"
-                                    class="logo logo_center">
+                                <img src="img/services/1xbet.png" srcset="img/services/1xbet_2x.png 2x" alt="1XBET">
                             </div>
                             <div class="detailedBar__itemHalf">
                                 <div class="detailedBar__profit">
                                     <h1 class="text text__h1">Ожидаемый доход:</h1>
                                     <h1 class="text text__profit"> ~5517.96 $</h1>
+                                    <div class="afterField afterField_yellow">13</div>
                                 </div>
                             </div>
-                            <p class="detailedBar__info detailedBar__info_left text text_grey text_center">
-                                После ввода 10$, 10 побед на ставках с вероятностью победить 50% и вывода выиграша.
-                            </p>
-                        </div>
-                        <div class="detailedBar__item detailedBar__item_column">
-                            <h1 class="detailedBar__absoluteTitle text text__h1">Дисциплины:</h1>
-                            <div class="detailedBar__icons">
-                                <img src="img/game_icons/dota2.png" srcset="img/game_icons/dota2_2x.png 2x"
-                                    alt="Game logo 1">
-                                <img src="img/game_icons/lol.png" srcset="img/game_icons/lol_2x.png 2x"
-                                    alt="Game logo 2">
-                                <img src="img/game_icons/csgo.png" srcset="img/game_icons/csgo_2x.png 2x"
-                                    alt="Game logo 3">
-                                <img src="img/game_icons/hots.png" srcset="img/game_icons/hots_2x.png 2x"
-                                    alt="Game logo 4">
-                                <img src="img/game_icons/ow.png" srcset="img/game_icons/ow_2x.png 2x" alt="Game logo 5">
-                                <img src="img/game_icons/sc.png" srcset="img/game_icons/sc_2x.png 2x" alt="Game logo 6">
-                                <img src="img/game_icons/ball.png" srcset="img/game_icons/ball_2x.png 2x"
-                                    alt="Game logo 7">
+                            <div class="detailedBar__description detailedBar__description_right">
+                                <p class="text text_grey text_center"> После ввода 10$, 10 побед на ставках с
+                                    вероятностью победить
+                                    50% и вывода выиграша.</p>
+                                <div class="detailedBar__infoIcon">
+                                    <p class="text">i</p>
+                                    <div class="detailedBar__window bar">
+                                        <p class="text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corrupti
+                                            commodi
+                                            nemo? Sint nostrum porro repellat ipsa, inventore modi ad delectus
+                                            repellendus
+                                            cumque perferendis temporibus possimus, deleniti nisi, voluptatibus quam.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text__detailedBar text text_grey text_center">
-                                Спортивные и киберспортивные диспциплины, доступныe для ставок.
-                            </p>
                         </div>
-                        <div class="detailedBar__item detailedBar__item_column">
+                        <div class="detailedBar__item">
+                            <h1 class="detailedBar__absoluteTitle text text__h1">Дисциплины:</h1>
+                            <div class="detailedBar__disciplines">
+                                <div class="detailedBar__icons">
+                                    <img src="img/game_icons/dota2.png" srcset="img/game_icons/dota2_2x.png 2x"
+                                        alt="Game logo 1">
+                                    <img src="img/game_icons/lol.png" srcset="img/game_icons/lol_2x.png 2x"
+                                        alt="Game logo 2">
+                                    <img src="img/game_icons/csgo.png" srcset="img/game_icons/csgo_2x.png 2x"
+                                        alt="Game logo 3">
+                                    <img src="img/game_icons/hots.png" srcset="img/game_icons/hots_2x.png 2x"
+                                        alt="Game logo 4">
+                                    <img src="img/game_icons/ow.png" srcset="img/game_icons/ow_2x.png 2x"
+                                        alt="Game logo 5">
+                                    <img src="img/game_icons/sc.png" srcset="img/game_icons/sc_2x.png 2x"
+                                        alt="Game logo 6">
+                                    <img src="img/game_icons/ball.png" srcset="img/game_icons/ball_2x.png 2x"
+                                        alt="Game logo 7">
+                                </div>
+                            </div>
+                            <div class="detailedBar__description">
+                                <p class="text text_grey text_center">
+                                    Спортивные и киберспортивные диспциплины, доступныe для ставок.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="detailedBar__item">
                             <h1 class="detailedBar__absoluteTitle text text__h1">Виды ставок:</h1>
                             <div class="detailedBar__betsTypes">
                                 <div class="detailedBar__betsTypes_upper">
                                     <img src="img/average.svg" class="text__icon">
                                     <p class="text">комиссия: ~3%</p>
+                                    <div class="afterField afterField_red">25</div>
                                 </div>
                                 <div class="detailedBar__betsTypes_lower">
-                                    <div class="detailedBar__betsPercent">
-
+                                    <div class="detailedBar__bet detailedBar__betsPercent">
+                                        <img src="img/bets_types/bets.svg" alt="Bets">
                                         <p class="text">ставки: ~10%</p>
+                                        <div class="afterField afterField_green">5</div>
                                     </div>
-                                    <div class="detailedBar__expressBetsPercent">
+                                    <div class="detailedBar__bet detailedBar__expressBetsPercent">
+                                        <img src="img/bets_types/expressBets.svg" alt="Express bets">
                                         <p class="text">эксперсс-ставки: ~3%</p>
+                                        <div class="afterField afterField_red">25</div>
                                     </div>
-                                    <div class="detailedBar__liveBetsPercent">
+                                    <div class="detailedBar__bet detailedBar__liveBetsPercent">
+                                        <img src="img/bets_types/liveBets.svg" alt="Live bets">
                                         <p class="text">лайв-ставки: ~3%</p>
+                                        <div class="afterField afterField_red">25</div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text__detailedBar text text_grey text_center">
-                                Приблизительные комиссии (средняя, и отдельно для каждого доступного вида ставок).
-                            </p>
-                        </div>
-                        <div class="detailedBar__item detailedBar__bottom">
-                            <h1 class="detailedBar__absoluteTitle detailedBar__absoluteTitle_bottom text text__h1">
-                                Способы ввода/вывода:</h1>
-                            <div class="detailedBar__itemHalf detailedBar__grid">
-                                <div class="detailedBar__input">
-                                    <img src="img/average.svg" class="text__icon">
-                                    <p class="text">комиссия</p>
-                                    <img src="img/icon_input.svg" class="text__icon text__svg">
-                                    <p class="text">ввода:</p>
-                                    <p class="text"><b>3%</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__steam_in">
-                                    <img src="img/default.png" alt="">
-                                    <p class="text">Steam-предметы:</p>
-                                    <p class="text"><b>да</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__visa_in">
-                                    <img src="img/logo_payment/visa.png" alt="">
-                                    <p class="text">Visa:</p>
-                                    <p class="text"><b>4%</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__mastercard_in">
-                                    <img src="img/logo_payment/mastercard.png" alt="">
-                                    <p class="text">Mastercard:</p>
-                                    <p class="text"><b>4%</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__webmoney_in">
-                                    <img src="img/logo_payment/webmoney.png" alt="">
-                                    <p class="text">WebMoney:</p>
-                                    <p class="text"><b>4%</b></p>
+                            <div class="detailedBar__description">
+                                <p class="text text_grey text_center">Приблизительные комиссии (средняя, и отдельно для
+                                    каждого доступного вида ставок).</p>
+                                <div class="detailedBar__infoIcon">
+                                    <p class="text">i</p>
+                                    <div class="detailedBar__window bar">
+                                        <p class="text">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corrupti
+                                            commodi
+                                            nemo? Sint nostrum porro repellat ipsa, inventore modi ad delectus
+                                            repellendus
+                                            cumque perferendis temporibus possimus, deleniti nisi, voluptatibus quam.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="detailedBar__itemHalf detailedBar__grid text">
-                                <div class="detailedBar__output">
-                                    <img src="img/average.svg" class="text__icon">
-                                    <p class="text">комиссия</p>
-                                    <img src="img/icon_output.svg" class="text__icon text__svg">
-                                    <p class="text">вывода:</p>
-                                    <p class="text"><b>3%</b></p>
+                        </div>
+                        <div class="detailedBar__item">
+                            <div class="detailedBar__ways">
+                                <h1 class="detailedBar__absoluteTitle text text__h1">Способы ввода/вывода:</h1>
+                                <div class="detailedBar__ways_input">
+                                    <div class="detailedBar__table">
+                                        <div class="detailedBar__input">
+                                            <img src="img/average.svg" class="text__icon">
+                                            <p class="text">комиссия</p>
+                                            <img src="img/icon_input.svg" class="text__icon text__svg">
+                                            <p class="text">ввода:</p>
+                                            <p class="text"><b>3%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__steam_in">
+                                            <img src="img/default.png" alt="">
+                                            <p class="detailedBar__column_second text">Steam-предметы:</p>
+                                            <p class="detailedBar__column_third text"><b>да</b></p>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__visa_in">
+                                            <img src="img/logo_payment/visa.png"
+                                                srcset="img/logo_payment/visa_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">Visa:</p>
+                                            <p class="detailedBar__column_third text"><b>4%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__mastercard_in">
+                                            <img src="img/logo_payment/mastercard.png"
+                                                srcset="img/logo_payment/mastercard_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">Mastercard:</p>
+                                            <p class="detailedBar__column_third text"><b>4%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__webmoney_in">
+                                            <img src="img/logo_payment/webmoney.png"
+                                                srcset="img/logo_payment/webmoney_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">WebMoney:</p>
+                                            <p class="detailedBar__column_third text"><b>4%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div
-                                    class="detailedBar__gridField detailedBar__smallerGrid_disabled detailedBar__steam_out text">
-                                    <img src="img/default.png" alt="">
-                                    <p class="text">Steam-предметы:</p>
-                                    <p class="text"><b>да</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__visa_out">
-                                    <img src="img/logo_payment/visa.png" alt="">
-                                    <p class="text">Visa:</p>
-                                    <p class="text"><b>4%</b></p>
-                                </div>
-                                <div
-                                    class="detailedBar__gridField  detailedBar__smallerGrid_disabled detailedBar__mastercard_out">
-                                    <img src="img/logo_payment/mastercard.png" alt="">
-                                    <p class="text">Mastercard:</p>
-                                    <p class="text"><b>4%</b></p>
-                                </div>
-                                <div class="detailedBar__gridField detailedBar__webmoney_out">
-                                    <img src="img/logo_payment/webmoney.png" alt="">
-                                    <p class="text">WebMoney:</p>
-                                    <p class="text"><b>4%</b></p>
+                                <div class="detailedBar__ways_output">
+                                    <div class="detailedBar__table">
+                                        <div class="detailedBar__input">
+                                            <img src="img/average.svg" class="text__icon">
+                                            <p class="text">комиссия</p>
+                                            <img src="img/icon_input.svg" class="text__icon text__svg">
+                                            <p class="text">ввода:</p>
+                                            <p class="text"><b>3%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                        <div
+                                            class="detailedBar__tableField detailedBar__tableField_disabled detailedBar__steam_in">
+                                            <img src="img/default.png" alt="">
+                                            <p class="detailedBar__column_second text">Steam-предметы:</p>
+                                            <p class="detailedBar__column_third text"><b>нет</b></p>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__visa_in">
+                                            <img src="img/logo_payment/visa.png"
+                                                srcset="img/logo_payment/visa_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">Visa:</p>
+                                            <p class="detailedBar__column_third text"><b>4%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                        <div
+                                            class="detailedBar__tableField detailedBar__tableField_disabled detailedBar__mastercard_in">
+                                            <img src="img/logo_payment/mastercard.png"
+                                                srcset="img/logo_payment/mastercard_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">Mastercard:</p>
+                                            <p class="detailedBar__column_third text">-</p>
+                                        </div>
+                                        <div class="detailedBar__tableField detailedBar__webmoney_in">
+                                            <img src="img/logo_payment/webmoney.png"
+                                                srcset="img/logo_payment/webmoney_2x.png 2x" alt="">
+                                            <p class="detailedBar__column_second text">WebMoney:</p>
+                                            <p class="detailedBar__column_third text"><b>4%</b></p>
+                                            <div class="afterField afterField_green">1</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bonus">
+                    <div class="bonus bonus_overlay">
                         <div class="bonus__content bonus__content_active">
                             <h1 class="bonus__title text text__h1 text_center">Бонусы:</h1>
                             <div class="bonus__item bonus__text">
@@ -355,11 +433,13 @@
                     </div>
                 </div>
             </div>
+            </div>
 
             <div class="bar">
                 <div class="bar__item">
                     <img src="img/services/ggbet.png" srcset="img/services/ggbet_2x.png 2x" alt="GGBET"
-                        class="bar__logo logo"></div>
+                        class="bar__logo logo">
+                </div>
                 <div class="bar__item">
                     <div class="bar__iconsGrid">
                         <img src="img/game_icons/dota2.png" srcset="img/game_icons/dota2_2x.png 2x" alt="Game logo 1">
@@ -391,10 +471,18 @@
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">виды ставок:</p>
                     <div class="bar__bets">
-                        <div class="text text_center">
-                            <img src="img/average.svg" class="text__icon">
-                            комиссия: <b>3%</b>
+                        <div class="bar__mobileIcons">
+                            <img src="img/bets_types/bets.svg" alt="Bets icon">
+                            <img src="img/bets_types/expressBets.svg" alt="Bets icon">
+                            <img src="img/bets_types/liveBets.svg" alt="Bets icon">
+                        </div>
+                        <div class="bar__textWithIcons">
+                            <p class="text text_center">
+                                <img src="img/average.svg" class="text__icon">
+                                комиссия: <b>3%</b>
+                            </p>
                         </div>
                         <div class="bar__iconsGrid bar__iconsGrid_4">
                             <img src="img/default.png" alt="Bet-way logo 1">
@@ -406,29 +494,36 @@
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">способы ввода/вывода:</p>
                     <div class="bar__bets">
-                        <div class="text text_center">
-                            <img src="img/average.svg" class="text__icon">
-                            комиссия:
-                            <img src="img/icon_input.svg" class="text__icon text__svg">
-                            <b>3%</b>
-                            <img src="img/icon_output.svg" class="text__icon text__svg">
-                            <b>3%</b>
+                        <div class="bar__textWithIcons">
+                            <p class="text text_center">
+                                <img src="img/average.svg" class="text__icon">
+                                комиссия:
+                                <img src="img/icon_input.svg" class="text__icon text__svg">
+                                <b>3%</b>
+                                <img src="img/icon_output.svg" class="text__icon text__svg">
+                                <b>3%</b>
+                            </p>
                         </div>
                         <div class="bar__iconsGrid bar__iconsGrid_4">
-                            <img src="img/logo_payment/mastercard.png" alt="Dep-way logo 1">
-                            <img src="img/logo_payment/visa.png" alt="Dep-way logo 2">
-                            <img src="img/logo_payment/webmoney.png" alt="Dep-way logo 3">
+                            <img src="img/logo_payment/mastercard.png" srcset="img/logo_payment/mastercard_2x.png 2x"
+                                alt="Dep-way logo 1">
+                            <img src="img/logo_payment/visa.png" srcset="img/logo_payment/visa_2x.png 2x"
+                                alt="Dep-way logo 2">
+                            <img src="img/logo_payment/webmoney.png" srcset="img/logo_payment/webmoney_2x.png 2x"
+                                alt="Dep-way logo 3">
                             <button href="#" class="bar__moreIcons text">14</button>
                             <div class="bar bar__window"></div>
                         </div>
                     </div>
                 </div>
                 <div class="bar__item">
+                    <p class="bar__mobileText text text_grey">ожидаемый доход:</p>
                     <strong class="text__profit text">~5517.96 $</strong>
                 </div>
-                <button href="#" class="bar__more button text text_grey">
-                    Подробнее
+                <button href="#" class="bar__more button">
+                    <p class="text text_grey">Подробнее</p>
                     <img src="img/icon_more.svg" alt="More icon" align="absmiddle">
                 </button>
             </div>
@@ -466,22 +561,24 @@
                         </p>
                     </div>
                 </div>
-                <div class="bar bonus bonus__btn">
+                <div class="bonus__btn">
                     <p class="text text_grey">БОНУСЫ</p>
                     <div class="logo__bonus">
                         <img src="img/logo_arrows.svg" alt="Arrow">
                     </div>
                 </div>
-
             </div>
 
             <div class="overlay">
                 <div class="container">
-                    <div class="bar detailedBar">
-                        <button class="detailedBar__closeButton button text text_grey">Закрыть</button>
+                    <div class="detailedBar">
+                        <button class="detailedBar__closeButton button">
+                            <p class="text text_grey">Закрыть</p>
+                            <img src="img/icon_close.svg" alt="Close">
+                        </button>
                         <div class="detailedBar__item">
                             <div class="detailedBar__itemHalf">
-                                <img src="img/services/ggbet.png" srcset="img/services/ggbet_2x.png 2x" alt="1XBET"
+                                <img src="img/services/ggbet.png" srcset="img/services/ggbet_2x.png 2x" alt="GGBET"
                                     class="logo logo_center">
                             </div>
                             <div class="detailedBar__itemHalf">
@@ -510,7 +607,7 @@
                                 <img src="img/game_icons/ball.png" srcset="img/game_icons/ball_2x.png 2x"
                                     alt="Game logo 7">
                             </div>
-                            <p class="text__detailedBar text text_grey text_center">
+                            <p class="detailedBar__description text text_grey text_center">
                                 Спортивные и киберспортивные диспциплины, доступныe для ставок.
                             </p>
                         </div>
@@ -534,7 +631,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="text__detailedBar text text_grey text_center">
+                            <p class="detailedBar__description text text_grey text_center">
                                 Приблизительные комиссии (средняя, и отдельно для каждого доступного вида ставок).
                             </p>
                         </div>
@@ -555,17 +652,20 @@
                                     <p class="text"><b>да</b></p>
                                 </div>
                                 <div class="detailedBar__gridField detailedBar__visa_in">
-                                    <img src="img/logo_payment/visa.png" alt="">
+                                    <img src="img/logo_payment/visa.png" srcset="img/logo_payment/visa_2x.png 2x"
+                                        alt="">
                                     <p class="text">Visa:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
                                 <div class="detailedBar__gridField detailedBar__mastercard_in">
-                                    <img src="img/logo_payment/mastercard.png" alt="">
+                                    <img src="img/logo_payment/mastercard.png"
+                                        srcset="img/logo_payment/mastercard_2x.png 2x" alt="">
                                     <p class="text">Mastercard:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
                                 <div class="detailedBar__gridField detailedBar__webmoney_in">
-                                    <img src="img/logo_payment/webmoney.png" alt="">
+                                    <img src="img/logo_payment/webmoney.png"
+                                        srcset="img/logo_payment/webmoney_2x.png 2x" alt="">
                                     <p class="text">WebMoney:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
@@ -579,31 +679,34 @@
                                     <p class="text"><b>3%</b></p>
                                 </div>
                                 <div
-                                    class="detailedBar__gridField detailedBar__smallerGrid_disabled detailedBar__steam_out text">
+                                    class="detailedBar__gridField detailedBar__gridField_disabled detailedBar__steam_out text">
                                     <img src="img/default.png" alt="">
                                     <p class="text">Steam-предметы:</p>
                                     <p class="text"><b>да</b></p>
                                 </div>
                                 <div class="detailedBar__gridField detailedBar__visa_out">
-                                    <img src="img/logo_payment/visa.png" alt="">
+                                    <img src="img/logo_payment/visa.png" srcset="img/logo_payment/visa_2x.png 2x"
+                                        alt="">
                                     <p class="text">Visa:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
                                 <div
-                                    class="detailedBar__gridField  detailedBar__smallerGrid_disabled detailedBar__mastercard_out">
-                                    <img src="img/logo_payment/mastercard.png" alt="">
-                                    <p class="text">Mastercard:</p>
+                                    class="detailedBar__gridField  detailedBar__gridField_disabled detailedBar__mastercard_out">
+                                    <img src="img/logo_payment/mastercard.png"
+                                        srcset="img/logo_payment/mastercard_2x.png 2x" alt="">
+                                    <p class=" text">Mastercard:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
                                 <div class="detailedBar__gridField detailedBar__webmoney_out">
-                                    <img src="img/logo_payment/webmoney.png" alt="">
+                                    <img src="img/logo_payment/webmoney.png"
+                                        srcset="img/logo_payment/webmoney_2x.png 2x" alt="">
                                     <p class="text">WebMoney:</p>
                                     <p class="text"><b>4%</b></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bonus">
+                    <div class="bonus bonus_overlay">
                         <div class="bonus__content bonus__content_active">
                             <h1 class="bonus__title text text__h1 text_center">Бонусы:</h1>
                             <div class="bonus__item bonus__text">
@@ -646,7 +749,6 @@
             </div>
         </section>
     </main>
-
     <footer class=" footer">
         <img src="img/logo_main/logo_footer.png" srcset="img/logo_main/logo_footer_2x.png 2x" alt="Stats4Bet logo"
             class="footer__logo">
