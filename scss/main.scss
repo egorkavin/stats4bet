@@ -13,9 +13,6 @@ body {
 	margin: 0 auto;
 	padding: 0 10px;
 	position: relative;
-	// & > .bar {
-	// 	margin-top: 30px;
-	// }
 	& > .bonus {
 		margin-bottom: 30px;
 	}
@@ -82,10 +79,6 @@ body {
 }
 
 .header {
-	background-image: url(../img/background/ursa.jpg);
-	background-repeat: no-repeat;
-	background-position: center 0;
-	background-size: auto auto;
 	&__background {
 		position: absolute;
 		z-index: -1;
@@ -98,6 +91,10 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background-image: url(../img/background/ursa.jpg);
+		background-repeat: no-repeat;
+		background-position: center 0;
+		background-size: auto auto;
 	}
 	&__wrapper {
 		padding: 30px 0 30px;
@@ -226,15 +223,15 @@ body {
 		padding: 20px;
 		justify-content: start;
 		width: 212px;
-		height: 212px;
+		height: auto;
+		background-color: $bar-color;
+		box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+		border-radius: 30px;
 		position: absolute;
 		z-index: 1;
 		right: 70px;
 		top: 50%;
 		transform: translateY(-50%);
-		background-color: $bar-color;
-		box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
-		border-radius: 30px;
 		& > img {
 			margin: 10px;
 		}
@@ -458,6 +455,9 @@ body {
 		&:not(:last-child):after {
 			@include borderBottom();
 		}
+		&:nth-child(4) {
+			margin-bottom: 100px;
+		}
 	}
 	&__itemHalf {
 		display: flex;
@@ -473,6 +473,7 @@ body {
 	&__profit {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		& > h1 {
 			margin-right: 10px;
 		}
@@ -525,17 +526,21 @@ body {
 	}
 	&__absoluteTitle {
 		position: absolute;
-		top: 50px;
+		top: 30px;
 		left: 0;
+		&_bottom {
+			top: -70px;
+		}
 	}
 	&__icons {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		height: fit-content;
 		width: 100%;
 		margin-bottom: 20px;
 		& > img {
-			margin: 10px 10px 0 10px;
+			margin: 5px 10px;
 		}
 	}
 	&__text {
@@ -574,59 +579,62 @@ body {
 	&__ways {
 		display: flex;
 		width: 100%;
-		margin-top: 100px;
+		justify-content: space-around;
 		&_input,
 		&_output {
-			width: 50%;
-			margin: 0 auto;
+			width: 230px;
+			min-width: 100px;
 		}
-	}
-	&__input,
-	&__output {
-		min-height: 23px;
+		&:after {
+			@include border(70%);
+			right: 50%;
+		}
 	}
 	&__textWithIcons {
 		display: flex;
 		align-items: center;
-	}
-	&__table {
-		max-width: 250px;
-		width: 235px;
-		margin: 0 auto;
+		flex: 0 0 100px;
+		margin-left: 10px;
+		&:first-child {
+			flex: 1;
+			overflow: hidden;
+			margin: 0;
+			& > p {
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
 	}
 	&__tableField {
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
-		width: 100%;
-		min-height: 23px;
+		height: 23px;
 		margin-top: 20px;
-		margin-right: auto;
 		& > img {
-			margin-right: 15px;
+			margin-right: 10px;
 		}
 		&_disabled {
 			filter: contrast(0) url(#disabled);
 		}
+		&_first {
+			justify-content: center;
+		}
 	}
 	&__column {
 		&_second {
-			width: 142px;
+			flex: 1;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
 		&_third {
-			width: 20px;
-			text-align: center;
+			flex: 0 0 100px;
+			display: flex;
+			justify-content: center;
+			& .text {
+				min-width: 17px;
+			}
 		}
-	}
-	&__input {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	&__output {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 }
 
@@ -665,14 +673,6 @@ body {
 			&:nth-child(2) {
 				display: none;
 			}
-		}
-	}
-	.detailedBar {
-		&__item {
-			width: 100%;
-		}
-		&__betsTypes {
-			max-width: 400px;
 		}
 	}
 }
@@ -789,9 +789,12 @@ body {
 		max-width: 80%;
 	}
 	.detailedBar {
-		&__item {
+		&__item:not(:last-child) {
 			flex-direction: column;
 			align-items: center;
+		}
+		&__item:nth-child(4) {
+			margin-bottom: 70px;
 		}
 		&__itemHalf {
 			width: 100%;
@@ -816,7 +819,7 @@ body {
 		&__absoluteTitle {
 			top: 20px;
 			&_bottom {
-				top: -10%;
+				top: -50px;
 			}
 		}
 		&__betsTypes {
@@ -830,43 +833,45 @@ body {
 				}
 			}
 		}
-		&__icons {
-			flex-wrap: wrap;
-		}
 	}
 }
 
 @media screen and (max-width: 576px) {
 	body {
-		min-width: 380px;
+		min-width: 320px;
 	}
 	.container {
 		max-width: 540px;
 	}
-	.detailedBar__ways_output .detailedBar__table .detailedBar__tableField {
+	.detailedBar__ways_output .detailedBar__tableField {
 		justify-content: flex-end;
-		& img,
-		& .detailedBar__column_second {
+		&:not(:first-child) img,
+		&:not(:first-child) .detailedBar__column_second {
 			display: none;
 		}
 	}
 	.detailedBar {
-		&__table {
-			width: auto;
+		&__tableField {
+			&_first {
+				justify-content: space-between;
+			}
 		}
 		&__ways {
-			&_input {
-				width: auto;
-				& .detailedBar__table .detailedBar__input {
-					justify-content: space-between;
-				}
-			}
+			justify-content: center;
 			&_output {
 				width: auto;
-				& .detailedBar__table .detailedBar__input .detailedBar__textWithIcons:first-child {
+				margin-left: 15px;
+				& .detailedBar__tableField_first .detailedBar__textWithIcons:first-child {
 					display: none;
 				}
 			}
+			&::after {
+				content: none;
+			}
+		}
+		&__profit > h1,
+		&__profit .afterField {
+			margin-top: 10px;
 		}
 	}
 }
