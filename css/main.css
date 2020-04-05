@@ -208,7 +208,7 @@ body {
 }
 
 .main {
-	padding-top: 30px;
+	padding: 30px 0 1px 0;
 	background-image: url(../img/background/lina.jpg);
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -295,6 +295,8 @@ body {
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	width: 172px;
+	max-height: 86px;
+	overflow: hidden;
 }
 .bar__iconsGrid > img {
 	margin: 10px;
@@ -305,12 +307,23 @@ body {
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
 }
-.bar__mobileIcons {
-	display: none;
+.bar__BetsIcons {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	width: 105px;
+	min-height: 43px;
 	-webkit-justify-content: space-around;
 	-ms-flex-pack: distribute;
 	justify-content: space-around;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.bar__BetsIcons > img {
+	margin: 0 10px;
 }
 .bar__mobileText {
 	display: none;
@@ -669,7 +682,7 @@ body {
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.bonus_overlay {
+.bonus__overlay {
 	border-radius: 30px;
 }
 
@@ -1180,7 +1193,6 @@ body {
 		-webkit-justify-content: flex-start;
 		-ms-flex-pack: start;
 		justify-content: flex-start;
-		overflow: hidden;
 		position: relative;
 	}
 	.bar__iconsGrid:before {
@@ -1283,19 +1295,6 @@ body {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		height: 86px;
-	}
-	.bar__item:nth-child(3) .bar__mobileIcons {
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		-webkit-align-items: center;
-		-ms-flex-align: center;
-		align-items: center;
-	}
-	.bar__item:nth-child(3) .bar__iconsGrid_4 {
-		display: none;
 	}
 	.bar__item:nth-child(4) {
 		display: block;
@@ -1425,6 +1424,9 @@ body {
 	.container {
 		max-width: 540px;
 	}
+	.container > .bonus {
+		max-width: 100%;
+	}
 	.bar__item {
 		margin-bottom: 15px;
 	}
@@ -1512,6 +1514,12 @@ body {
 		-webkit-flex: 1;
 		-ms-flex: 1;
 		flex: 1;
+	}
+	.bonus__content {
+		display: none;
+	}
+	.bonus__btn {
+		max-height: 30px;
 	}
 	.bonus__btn .logo__bonus {
 		display: none;
